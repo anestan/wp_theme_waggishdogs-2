@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(nunito-400-regular.woff2) format('woff2');
+}
+@font-face {
+    font-family: 'Nunito';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(nunito-400-italic.woff2) format('woff2');
+}
+@font-face {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(nunito-700-regular.woff2) format('woff2');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tw-apply-main-navigation {
+    @apply absolute bottom-16 right-0 md:bottom-auto md:top-16 bg-green-500 w-60 rounded-md p-5 text-white transition-all;
+}
+
+.tw-apply-main-navigation li {
+    @apply mb-5;
+}
+.tw-apply-footer-menu ul {
+    @apply flex flex-wrap justify-center;
+}
+
+.tw-apply-footer-menu li {
+    @apply mx-3;
+}
+
+.tw-apply-pagination {
+    @apply flex justify-between sm:justify-center my-10 mx-2;
+}
+
+.tw-apply-pagination .page-numbers:not(.prev):not(.next) {
+    @apply hidden relative sm:inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-bold text-green-500 hover:bg-gray-50;
+}
+
+.tw-apply-pagination .next,
+.tw-apply-pagination .prev {
+    @apply relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-bold text-green-500 hover:bg-gray-50;
+}
+
+.tw-apply-post-navigation {
+    @apply my-10;
+}
+
+.screen-reader-text {
+    @apply sr-only;
+}
+
+
+
+.tw-apply-post-navigation .nav-links {
+    @apply flex flex-wrap justify-between;
+}
+
+.tw-apply-post-navigation .nav-links > div {
+    @apply text-lg mb-5;
+    text-decoration: 'none';
+    box-shadow: inset 0 -10px 0 0 theme('colors.green.200');
+    transition: all 0.2s ease;
+}
+
+.tw-apply-post-navigation .nav-links > div:hover {
+    box-shadow: inset 0 -25px 0 0 theme('colors.green.300');
+  }

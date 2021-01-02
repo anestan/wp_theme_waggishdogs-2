@@ -1,0 +1,24 @@
+{
+  "name": "underscores_tailwind",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
+  "main": "index.js",
+  "scripts": {
+    "postcss:build": "postcss  ./src/css/main.css -o ./dist/main.css",
+    "postcss:watch": "postcss -w ./src/css/main.css -o ./dist/main.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/typography": "^0.3.1",
+    "autoprefixer": "^10.0.4",
+    "cssnano": "^4.1.10",
+    "postcss": "^8.1.10",
+    "postcss-cli": "^8.3.0",
+    "tailwindcss": "^2.0.1"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "devDependencies": {}
+}
