@@ -4,12 +4,13 @@
   "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
   "main": "index.js",
   "scripts": {
-    "postcss:build": "postcss  ./src/css/main.css -o ./dist/main.css",
-    "postcss:watch": "postcss -w ./src/css/main.css -o ./dist/main.css"
+    "css:prod": "export NODE_ENV=production && postcss  ./src/css/main.css -o ./dist/main.css",
+    "css:dev": "export NODE_ENV=development && postcss -w ./src/css/main.css -o ./dist/main.css"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/typography": "^0.3.1",
     "autoprefixer": "^10.0.4",
     "cssnano": "^4.1.10",

@@ -146,7 +146,7 @@ function underscores_tailwind_scripts() {
 
 	wp_enqueue_style( 'tailwind_main', get_template_directory_uri() . '/assets/dist/main.css', array(), _S_VERSION );
 
-	wp_enqueue_script( 'underscores_tailwind-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	// wp_enqueue_script( 'underscores_tailwind-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
