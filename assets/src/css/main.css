@@ -76,3 +76,11 @@
 .tw-apply-post-navigation .nav-links > div:hover {
     box-shadow: inset 0 -25px 0 0 theme('colors.green.300');
   }
+
+.block-editor-block-list__layout {
+    @apply prose prose-lg max-w-3xl mx-auto;
+}
+
+.editor-post-title__block {
+    @apply prose prose-lg max-w-3xl mx-auto;
+}

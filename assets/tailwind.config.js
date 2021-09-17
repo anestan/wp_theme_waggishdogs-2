@@ -1,7 +1,23 @@
 module.exports = {
-  purge: [
-    '../**/*.php',
-  ],
+  important: true,
+  purge: {
+    content: [
+      '../**/*.php',
+    ],
+    safelist: [
+      'hidden',
+      'p-6',
+      'p-4',
+      'space-x-4',
+      'h-96',
+      'hover:bg-gray-500',
+      'overflow-auto',
+      'flex-no-wrap',
+      'transition-all',
+      'rounded'
+
+    ]
+  } ,
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {

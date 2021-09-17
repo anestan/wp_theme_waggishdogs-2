@@ -174,13 +174,6 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
-
 // remove version from head
 remove_action('wp_head', 'wp_generator');
 
@@ -197,3 +190,27 @@ function remove_version_scripts_styles($src) {
 add_filter('style_loader_src', 'remove_version_scripts_styles', 9999);
 add_filter('script_loader_src', 'remove_version_scripts_styles', 9999);
 
+
+// Define path and URL to the ACF plugin.
+define( 'MY_ACF_PATH', get_stylesheet_directory() . '/inc/acf/' );
+define( 'MY_ACF_URL', get_stylesheet_directory_uri() . '/inc/acf/' );
+
+// Include the ACF plugin.
+include_once( MY_ACF_PATH . 'acf.php' );
+
+// Customize the url setting to fix incorrect asset URLs.
+add_filter('acf/settings/url', 'my_acf_settings_url');
+function my_acf_settings_url( $url ) {
+    return MY_ACF_URL;
+}
+
+require get_template_directory() . '/inc/acf-blocks.php';
+
+add_action( 'after_setup_theme', 'waggishdogs_gutenberg_css' );
+
+function waggishdogs_gutenberg_css(){
+
+	add_theme_support( 'editor-styles' ); // if you don't add this line, your stylesheet won't be added
+	add_editor_style( '/assets/dist/main.css' ); // tries to include style-editor.css directly from your theme folder
+
+}
